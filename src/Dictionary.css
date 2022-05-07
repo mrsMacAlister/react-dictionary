@@ -18,21 +18,3 @@ body {
     font-size: 12px;
     margin-top: 5px;
 }
-
-.Phonetic div.Phonetic {
-    display: block;
-    background-color: black;
-}
-
-.Phonetic a {
-    border: 1px solid #ddd;
-    border-radius: 20px;
-    padding: 10px;
-    margin-right: 15px;
-    margin-top: 50px;
-    background-color: pink;
-}
-
-.Synonyms li {
-    list-style-type: "-> ";
-}

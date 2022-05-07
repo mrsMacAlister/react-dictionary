@@ -7,7 +7,6 @@ function App() {
       <div className="container">
         <header className="App-header">
           <h1>Dictionary</h1>
-          <h3>Which word would you like to look up?</h3>
         </header>
         <main>
           <Dictionary defaultKeyword="ocean" />
