@@ -7,6 +7,7 @@ export default function Meaning(props) {
         <div className="Meaning">
         <h3>{props.meaning.partOfSpeech}</h3>
         {props.meaning.definitions.map(function(definition, index){
+            if (definition.example) {
             return (
                 <div key={index}>
                     <p><strong>Definition:</strong> {definition.definition}
@@ -17,6 +18,16 @@ export default function Meaning(props) {
                     </p>
                 </div>
             );
+        } else {
+            return (
+                <div key={index}>
+                    <p><strong>Definition:</strong> {definition.definition}
+                    <br/>
+                    <Synonyms synonyms={definition.synonyms} />
+                    </p>
+                </div>
+            );
+        }
         })}
        
         </div>);
