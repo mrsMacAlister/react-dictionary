@@ -5,10 +5,9 @@
 
 .App header h1 {
     text-align: center;
-}
-
-.App header h3 {
-    text-align:center;
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0,0,0, 0.7), -1px -1px 1px rgba(0, 0, 0, 0.7);
+    font-size: 50px;
 }
 
 .App footer {

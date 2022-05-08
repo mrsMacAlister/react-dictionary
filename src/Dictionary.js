@@ -2,22 +2,29 @@ import React, {useState} from "react";
 import axios from "axios";
 import "./Dictionary.css";
 import Results from "./Results";
+import Photos from "./Photos";
 
 export default function Dictionary (props) {
     let [keyword, setKeyword] = useState(props.defaultKeyword);
     let [results, setResults] = useState(null);
     let [loaded, setLoaded] = useState(false);
+    let [photos, setPhotos] = useState(null);
 
     function handleResponse(response) {
-        console.log(response.data);
-        console.log(response.data[0].meanings[0].synonyms[0]);
         setResults(response.data[0]);
     }
 
+    function handlePexelsResponse(response) {
+        setPhotos(response.data);
+    }
+
     function search() {
-        /*alert(`Searching for "${keyword}" definition.`);*/
         let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
         axios.get(apiUrl).then(handleResponse);
+
+        let pexelsApiKey = `563492ad6f917000010000010ff103a747624e7c83fb15e8d55379e8`;
+        let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=12`;
+        axios.get(pexelsApiUrl, {headers: {Authorization: `Bearer ${pexelsApiKey}`},}).then(handlePexelsResponse);
     }
 
     function handleSubmit(event) {
@@ -26,7 +33,6 @@ export default function Dictionary (props) {
     }
 
     function handleKeywordChange(event) {
-        console.log(event.target.value);
         setKeyword(event.target.value);
     }
 
@@ -40,7 +46,6 @@ export default function Dictionary (props) {
         <div className="Dictionary">
             <section>
                 <header className="App-header">
-                    <h1>Dictionary</h1>
                     <h3>Which word would you like to look up?</h3>
                 </header>
                 <form onSubmit={handleSubmit}>
@@ -51,7 +56,9 @@ export default function Dictionary (props) {
                     Suggested words: light, surf, time...
                 </div>
             </section>
-            <Results results={results} />
+            <Results results={results} photos={photos}/>
+            <Photos photos={photos} />
+                    
         </div>
     );
 } else {
