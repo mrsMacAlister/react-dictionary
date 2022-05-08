@@ -1,3 +1,6 @@
+body {
+    background: linear-gradient(to right, rgb(255, 95, 109), rgb(255, 195, 113));
+}
 .App {
     max-width: 800px;
     margin: 40px auto;
@@ -5,9 +8,11 @@
 
 .App header h1 {
     text-align: center;
-    color: white;
+    color: rgba(255, 255, 255, 1);
     text-shadow: 1px 1px 1px rgba(0,0,0, 0.7), -1px -1px 1px rgba(0, 0, 0, 0.7);
     font-size: 50px;
+    margin-top: 50px;
+    margin-bottom: 40px;
 }
 
 .App footer {
