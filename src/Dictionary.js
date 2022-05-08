@@ -50,10 +50,10 @@ export default function Dictionary (props) {
                 </header>
                 <form onSubmit={handleSubmit}>
                     <div className="row">
-                        <div className="col-10">
+                        <div className="col">
                             <input type="search" autoFocus="on" onChange={handleKeywordChange} />
                         </div>
-                        <div className="col-2">
+                        <div className="col-3 col-sm-2">
                             <button type="submit">Find</button>
                         </div>
                     </div>
