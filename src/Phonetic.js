@@ -15,7 +15,7 @@ export default function Phonetic(props) {
     } else {
         return (
             <div className="Phonetic">
-                <a href="#">
+                <a href={props.phonetic.audio} target="_blank" rel="noreferrer">
                     <img src={noAudio} alt="audio not available" />
                 </a>
                 <span className="pronunciation">{props.phonetic.text}</span>
