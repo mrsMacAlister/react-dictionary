@@ -63,7 +63,7 @@ export default function Dictionary (props) {
                     Suggested words: light, surf, time...
                 </div>
             </section>
-            <Results results={results} photos={photos}/>
+            <Results results={results} />
             <Photos photos={photos} />
                     
         </div>

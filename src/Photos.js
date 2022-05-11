@@ -3,20 +3,19 @@ import "./Photos.css";
 
 export default function Photos(props) {
     if (props.photos) {
-        console.log(props.photos.photos);
-    return (
-        <section className="Photos">
-            <div className="row">
-                {props.photos.photos.map(function(photo, index){
-                    return (
-                        <div className="col-6 col-sm-4" key={index}>
-                            <a href={photo.src.original} target="_blank" rel="noreferrer"><img src={photo.src.landscape} className="img-fluid" alt={props.photos.alt} /></a>
-                        </div>
-                    )
-                })}
-            </div>
-        </section>
-    );
+        return (
+            <section className="Photos">
+                <div className="row">
+                    {props.photos.photos.map(function(photo, index){
+                        return (
+                            <div className="col-6 col-sm-4" key={index}>
+                                <a href={photo.src.original} target="_blank" rel="noreferrer"><img src={photo.src.landscape} className="img-fluid" alt={photo.alt} /></a>
+                            </div>
+                        );
+                    })}
+                </div>
+            </section>
+        );
     } else {
         return null;
     }

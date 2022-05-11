@@ -18,6 +18,23 @@
     border: 1px solid rgba(255, 255, 255, 1);
 }
 
+.Phonetic button {
+    width: 50px;
+    height: 35px;
+    padding-bottom: 30px;
+    background: rgba(255, 255, 255, 0);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 50px;
+    margin-right: 13px;
+    transition: all 200ms ease-in-out;
+}
+
+.Phonetic button:hover {
+    background: linear-gradient(to left, rgba(255, 95, 109, 0.8), rgba(255, 195, 113, 0.6));
+    color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(255, 255, 255, 1);
+}
+
 .Phonetic .pronunciation {
     opacity: 0.7;
     font-weight: 600;
